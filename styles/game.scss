@@ -1,0 +1,461 @@
+// SCROLL ANIMATION BACKGROUND
+
+// .scrollSpaceBackgroundContainer {
+//     width: 100%;
+//     height: 100vh;
+//     overflow: hidden;
+//     background-size: auto 100%;
+
+// }
+
+// .scrollSpaceBackground {
+
+//     display: flex;
+//     width: 200%;
+//     height: 100vh;
+//     animation: scrollSpaceBackgroundAnimation 10s linear infinite;
+// }
+
+// .scrollSpaceBackground img {
+//     width: 50%;
+//     // background-size: cover;
+//     object-fit: fill;
+//     // height: 100vh;
+// }
+
+// @keyframes scrollSpaceBackgroundAnimation {
+//     0% {
+//         transform: translateX(0%);
+//     }
+
+//     100% {
+//         transform: translateX(-50%);
+//     }
+// }
+
+
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+
+    .scrollSpaceBackground {
+        background-image: url("../img/space.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        z-index: -99;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: -10;
+        animation: animSpace 8s infinite;
+    }
+
+    @keyframes animSpace {
+        0% {
+            filter: hue-rotate(0deg);
+            transform: translate(50px, 50px) rotate(0deg) scale(0.9);
+        }
+
+        25% {
+            filter: hue-rotate(90deg);
+            transform: translate(-50px, -50px) rotate(1deg) scale(0.9);
+        }
+
+        50% {
+            filter: hue-rotate(180deg);
+            transform: translate(50px, -50px)rotate(2deg) scale(0.9);
+        }
+
+        75% {
+            filter: hue-rotate(260deg);
+            transform: translate(-50px, 50px) rotate(1deg) scale(0.9);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+            transform: translate(50px, 50px)rotate(0deg) scale(0.9);
+
+        }
+    }
+
+
+
+
+
+
+
+    #ships {
+        position: relative;
+        margin-top: 150px;
+        width: 90%;
+        max-width: 1300px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        #shipLeft {
+            // border: solid 1px red;
+            width: 100%;
+            max-width: 260px;
+            // height: 260px;
+            animation: animShipLeft 5s infinite ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                filter: drop-shadow(0px 0px 50px black);
+            }
+        }
+
+        @keyframes animShipLeft {
+            0% {
+                transform: translate(0px, 40px) rotate(2deg);
+                animation-timing-function: ease-in;
+            }
+
+            25% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: translate(0px, -40px) rotate(-2deg);
+                animation-timing-function: ease-in;
+            }
+
+            75% {
+                transform: rotate(4deg);
+            }
+
+            100% {
+                transform: translate(0px, 40px) rotate(2deg);
+                animation-timing-function: ease-in;
+            }
+        }
+
+
+
+
+
+        #weaponShip {
+            // border: solid 1px red;
+            width: 100%;
+            max-width: 150px;
+            height: 100px;
+            animation: animWeaponShip 1s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 80%;
+            }
+
+        }
+
+        @keyframes animWeaponShip {
+            0% {
+                transform: translate(-50%, 0px);
+            }
+
+            100% {
+                transform: translate(50%, 0px);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+
+            @keyframes animWeaponShip {
+                0% {
+                    transform: translate(-25%, 0px);
+                }
+
+                100% {
+                    transform: translate(25%, 0px);
+                    opacity: 0;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+
+            @keyframes animWeaponShip {
+                0% {
+                    transform: translate(-100%, 0px);
+                }
+
+                100% {
+                    transform: translate(100%, 0px);
+                    opacity: 0;
+                }
+            }
+        }
+
+
+
+
+
+
+        #shipRight {
+            // border: solid 1px red;
+            width: 100%;
+            max-width: 260px;
+            // height: 260px;
+            animation: animShipRight 5s infinite ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                filter: drop-shadow(0px 0px 50px black);
+            }
+        }
+
+        @keyframes animShipRight {
+            0% {
+                transform: translate(0px, -40px) rotate(-2deg);
+                animation-timing-function: ease-in;
+
+            }
+
+            25% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: translate(0px, 40px) rotate(2deg);
+                animation-timing-function: ease-in;
+            }
+
+            75% {
+                transform: rotate(4deg);
+            }
+
+            100% {
+                transform: translate(0px, -40px) rotate(-2deg);
+                animation-timing-function: ease-in;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+#statBarsContainer {
+    margin-top: 40px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 450px) {
+        margin-top: 150px;
+    }
+
+
+    .statBars {
+        width: 100%;
+        max-width: 400px;
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        img {
+            width: 90%;
+
+        }
+
+        #rad,
+        #stress,
+        #repair,
+        #shield {
+            border: solid 1px white;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 15px black;
+        }
+
+        .bar {
+            border: solid 1px white;
+            border-radius: 4px;
+
+            width: 100%;
+            max-width: 320px;
+            height: 30px;
+            display: flex; // blabla
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 15px black;
+            overflow: hidden;
+
+            .barInteriorContainer {
+                margin: auto;
+                width: 97%;
+
+                .barInterior {
+                    background: linear-gradient(to left, rgb(0, 237, 0), rgb(237, 146, 0), rgb(255, 0, 0));
+                    border: solid 1px white;
+                    border-radius: 3px;
+                    width: 100%;
+                    margin-right: auto;
+                    height: 20px;
+                    transition: width;
+                    // transition: width 1s linear;
+
+                }
+            }
+        }
+
+        .btnIncrementation {
+            border: solid 1px rgb(130, 254, 21);
+            border-radius: 4px;
+            width: 100%;
+            max-width: 32px;
+            height: 32px;
+            background-color: unset;
+            color: rgb(0, 255, 0);
+
+            font-size: 24px;
+            font-weight: 900;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 0px 15px black;
+
+            &:hover {
+                background-color: rgb(0, 192, 0);
+                color: white;
+                box-shadow: 0px 0px 15px rgb(0, 192, 0);
+            }
+        }
+    }
+}
+
+
+
+#show-game-button {
+    z-index: 99;
+    position: absolute;
+}
+
+
+
+
+
+// EXPLOSION ANIMATION
+// @keyframes explosion {
+//     0% { background-image: url('../img/explosion-01.png'); }
+//     8% { background-image: url('../img/explosion-02.png'); }
+//     16% { background-image: url('../img/explosion-03.png'); }
+
+//     24% { background-image: url('../img/explosion-04.png'); }
+//     32% { background-image: url('../img/explosion-05.png'); }
+//     40% { background-image: url('../img/explosion-06.png'); }
+
+//     48% { background-image: url('../img/explosion-07.png'); }
+//     56% { background-image: url('../img/explosion-08.png'); }
+//     64% { background-image: url('../img/explosion-09.png'); }
+
+//     72% { background-image: url('../img/explosion-10.png'); }
+//     80% { background-image: url('../img/explosion-11.png'); }
+//     86% { background-image: url('../img/explosion-12.png'); }
+
+//     94% { background-image: url('../img/explosion-13.png'); }
+//     100% { background-image: url('../img/explosion-14.png'); }
+
+//   }
+
+//   .explosion {
+//     animation-name: explosion;
+//     animation-duration: 1s;
+//     animation-timing-function: steps(14);
+//     animation-iteration-count: 1;
+//   }
+
+
+@keyframes explosion {
+    0% {
+        opacity: 1;
+        transform: scale(0.1);
+    }
+
+    20% {
+        opacity: 0;
+        transform: scale(5);
+    }
+
+    21% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+
+    22% {
+        opacity: 1;
+        transform: scale(0.1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(6);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(8);
+    }
+}
+
+.explosion {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff, #f2c706, #ff6200, transparent, #f20606, transparent);
+    filter: blur(2px);
+    animation-name: explosion;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+
+
+
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

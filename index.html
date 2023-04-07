@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamagotchi Human VS Alien</title>
+  <link rel="stylesheet" href="./style.scss">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100;400;800&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <!-- FONTS -->
+</head>
+
+
+
+
+<body>
+  <!-- LOGO NAV -->
+  <p id="logo">- TAMA<span>Space -</span></p>
+
+
+  <main>
+
+    <!-- LAUNCH -->
+    <!-- backgroundStartLaunch -->
+    <section class="backgroundStartLaunch">
+      <!-- <img src="./img/space.jpg" alt="Fond spatial type cartoon"> -->
+
+      <!-- startLaunch -->
+      <div id="startLaunch">
+        <h1>Mini Tamagotchi spatial</h1>
+
+        <!-- startLaunchCharacterChoice -->
+        <div id="startLaunchCharacterChoice">
+          <p>Choisissez votre personnage</p>
+          <div id="characterChoice">
+
+            <!-- humanChoice -->
+            <div id="humanChoice">
+              <img src="./img/humanHead.png" alt="Tête de scaphandre cartoon">
+              <div id="selectHumanCheck">
+                <p>Humain</p>
+                <input type="radio" id="selectHuman" name="selectRace" class="human" value="humanOption">
+                <label for="selectHuman"></label>
+              </div>
+            </div>
+
+            <!-- alienChoice -->
+            <div id="alienChoice">
+              <img src="./img/alienHead.png" alt="Tête d'alien cartoon">
+              <div id="selectAlienCheck">
+                <p>Alien</p>
+                <input type="radio" id="selectAlien" name="selectRace" class="alien" value="alienOption">
+                <label for="selectAlienCheck"></label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Separate line -->
+        <div id="separateWhite"></div>
+
+
+        <!-- startLaunchCharacterName -->
+        <div id="startLaunchCharacterName">
+          <p>Rentrez un nom de joueur</p>
+          <p><span>entre 3 et 22 caractères</span></p>
+
+          <label for="nameEnter"><!-- Pas de texte ici mais plutot dans une balise <p> au dessus --></label>
+          <input type="text" id="nameEnter" name="nameEnter" required minlength="3" maxlength="22" size="10">
+
+          <button class="btnGo" id="btnGo">Go !</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- GAME -->
+    <section class="game">
+
+      <!-- Scroll infini du background -->
+      <!-- <div class="scrollSpaceBackgroundContainer">
+        <div class="scrollSpaceBackground">
+          <img src="./img/space.jpg" alt="fond d'écran d'espace cartoon">
+          <img src="./img/space.jpg" alt="fond d'écran d'espace cartoon">
+        </div>
+      </div> -->
+
+      <div class="scrollSpaceBackground">
+        <img src="./img/space.jpg" alt="fond d'écran d'espace cartoon">
+      </div>
+
+      <!-- Fusée, soucoupe, rocket, laser -->
+      <div id="ships">
+        <div class="ship" id="shipLeft"><img src="" alt=""> </div>
+        <div class="weapon" id="weaponShip"><img src="" alt=""> </div>
+        <div class="ship" id="shipRight"><img src="" alt="">
+          <div id="explosion"></div>
+        </div>
+      </div>
+
+
+      <!-- Barres de progression -->
+      <div id="statBarsContainer">
+
+        <div class="statBars">
+          <div id="rad"> <img src="./img/radiationBarPicto.png" alt="picto radiation"> </div>
+          <div class="bar">
+            <div class="barInteriorContainer">
+              <div class="barInterior" id="barRad"></div>
+            </div>
+          </div>
+          <button class="btnIncrementation" id="btnIncrementationRad">+</button>
+        </div>
+
+        <div class="statBars">
+          <div id="stress"> <img src="./img/stressBarPicto.png" alt="picto goutte d'eau"> </div>
+          <div class="bar">
+            <div class="barInteriorContainer">
+              <div class="barInterior" id="barStress"></div>
+            </div>
+          </div>
+          <button class="btnIncrementation" id="btnIncrementationStress">+</button>
+        </div>
+
+        <div class="statBars">
+          <div id="repair"> <img src="./img/repairBarPicto.png" alt="picto clé anglaise"> </div>
+          <!-- <div id="shield"> <img src="./img/shieldBarPicto.png" alt="picto pile d'energie alien"> </div> -->
+          <div class="bar">
+            <div class="barInteriorContainer">
+              <div class="barInterior" id="barCustom"></div>
+              <!-- id="barRepair barShield" -->
+            </div>
+          </div>
+          <button class="btnIncrementation" id="btnIncrementationCustom">+</button>
+          <!-- id="btnIncrementationRepair btnIncrementationShield" -->
+        </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- CACHER LES SECTIONS DYNAMIQUEMENT -->
+  <section class="game hidden"></section>
+
+  <script src="./script.ts" type="module"></script>
+</body>
+
+</html>

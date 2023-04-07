@@ -1,0 +1,21 @@
+{
+  "name": "05-tamagotchi",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "pixi.js": "^7.2.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "sass": "^1.60.0",
+    "typescript": "^5.0.2"
+  }
+}
